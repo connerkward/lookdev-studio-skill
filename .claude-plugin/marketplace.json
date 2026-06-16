@@ -1,6 +1,6 @@
 {
   "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
-  "name": "lookdev-studio-skill",
+  "name": "lookdev",
   "description": "Human-in-the-loop web studio to tune AI-generated output by eye.",
   "owner": {
     "name": "Conner K Ward",

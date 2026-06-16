@@ -8,7 +8,7 @@
 
 ```
 /plugin marketplace add connerkward/lookdev-studio-skill
-/plugin install lookdev@lookdev-studio-skill
+/plugin install lookdev@lookdev
 ```
 
 Or install the whole set: `/plugin marketplace add connerkward/connerkward-skills`. Or drop this repo's `SKILL.md` into your agent's skills directory.
