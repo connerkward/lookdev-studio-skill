@@ -10,32 +10,55 @@
 
 ## 🤔 Why
 
-Claude Code is text-first, so it tends to **guess** visual values — a blur radius, an easing curve, a crop, a grade — from a static screenshot, then ask you to react in prose. That loop is slow and lossy. lookdev adds the missing interaction mode: a **real-time visual studio with a human in the loop**. You act on the artifact; the change is captured; the agent gets exact values back.
+Claude Code is text-first. 📝 So when the work is *visual* — a blur radius, an easing curve, a crop, a color grade — it **guesses** the number off a screenshot and asks you to react in prose.
 
-> **What this is:** not a one-shot render and not a Q&A where you dictate numbers — a studio you manipulate, where "show me, I'll pick" beats "ask me to specify."
+🐌 Slow. And lossy.
+
+lookdev adds the missing mode: a **live studio you actually touch.** 👇 You drag → it re-renders → the exact value flows back to the agent.
+
+> 🎯 Not a one-shot render. Not a Q&A where you dictate numbers. A studio you *manipulate* — **"show me, I'll pick"** beats **"ask me to specify."**
 
 ## 🔁 How it differs from how most people use Claude Code
 
 ![How lookdev differs: most Claude Code use is a text round-trip where Claude guesses values from a screenshot; lookdev builds a live studio you tune by eye, capturing exact values](docs/how-it-works.svg)
 
-Most Claude Code work is text the whole way down — you describe a look, Claude *guesses* the values from a screenshot, hands back code, you eyeball it, describe the fix in prose, and wait for the next round. Every iteration is a **time-delayed round-trip**: generate → wait → critique in words → regenerate, minutes at a time.
+The usual loop is text the whole way down:
 
-lookdev collapses that to **seconds of real-time feedback**. Claude builds the studio once; then **you** drag a slider and the result updates live — no waiting on a regeneration to find out whether 12px or 16px was right. The slow part of agent iteration was never the compute, it's the **human round-trip** — the back-and-forth of putting visual fixes into words. Tuning by hand removes it, and the exact state you land on (not a guess) becomes the code or asset.
+> 📝 describe the look → 🤖 Claude guesses → 💻 code back → 👀 you squint → 📝 describe the fix → ⏳ wait → 🔁 repeat
 
-> **We didn't invent this.** It's a pattern already emerging in agent workflows — call it *ephemeral tooling*: the agent builds a disposable, single-use interface for one tuning session instead of iterating blind. lookdev just codifies it into a repeatable skill.
+Every lap is a **time-delayed round-trip** — minutes each.
+
+lookdev collapses it to **seconds of real-time feedback.** ⚡ Claude builds the studio *once*; then **you** drag a slider and watch it update live — no regeneration to find out whether 12px or 16px was right.
+
+The slow part of agent iteration was never the compute. 🧠 It's the **human round-trip** — translating a visual fix into words. Tuning by hand deletes that step, and the state you land on (exact, not guessed) *becomes* the code or asset.
+
+> 🌱 **We didn't invent this.** It's a pattern already emerging in agent workflows — call it *ephemeral tooling*: the agent builds a disposable, single-use interface for one tuning session instead of iterating blind. lookdev just codifies it into a repeatable skill.
 
 ## ✨ What it does
 
-- 🎛️ **Live controls** — sliders, pickers, drag handles, scrubbers; tune and see the result instantly
-- 🖼️ **Image processing** — dither, halftone, posterize, ASCII, blur, edge, quantize, color-grade
-- 🎨 **Color** — palette extraction (coverage %), per-band pickers, saturation / contrast / gamma curves, theme tokens
-- 🔤 **Typography** — font / size / weight / leading / tracking / measure on live sample text
-- 📐 **Layout & framing** — draggable, selectable elements; resize handles; spacing rulers; snap-to-grid; aspect-lock crop
-- 🌀 **Animation** — easing-curve editor, duration sliders, scrubber, replay
-- 🧩 **Component variants** — hover / focus / disabled / loading / dark, side by side
-- 🟦 **3D / render lookdev** — orbit, material (color · roughness · metalness · stone presets), lighting rigs, ViewCube — the relief studio above
-- 📝 **Text & media review** — inline editing + selection highlight + anchored margin comments for posts, copy, and media sets
-- 💾 **Reproducible** — the chosen state round-trips to JSON / settings (and, for the relief studio, into exported STL metadata)
+Four things, really:
+
+- 🎛️ **You tune, it updates live** — sliders, pickers, drag handles, scrubbers; every change re-renders instantly. No typing a number you guessed.
+- 💾 **The result round-trips** — the state you dial in bakes back into reproducible JSON / settings / code (or STL metadata for 3D). *What you tuned is the deliverable* — not a screenshot to re-describe.
+- 🎨 **Tune almost any visual axis** — image (dither · halftone · blur · grade), color (palettes · curves · tokens), type (size · weight · leading · measure), layout (drag · snap · crop), animation (easing · timing), component states, and full 3D material/lighting lookdev.
+- 📝 **Or review prose & media** — inline edit, highlight-to-comment, anchored margin notes for posts, copy, and media sets.
+
+## 🆚 vs. rolling your own studio
+
+You don't *strictly* need a skill for this — you can just tell Claude *"build me a studio with sliders."* 🤷 So why lookdev?
+
+Because from scratch, the agent re-invents the **groundwork UX** every time — and usually botches a piece of it:
+
+- 🔌 the wiring that makes a control *actually* re-render the preview live
+- 🧷 drag / resize handles, snap-to-grid, aspect-lock crop that feel right instead of janky
+- 💾 a capture format that round-trips state back into real code/JSON — not a screenshot you have to re-explain
+- 🌐 serving it on a free port and opening the tab for you
+- 🗂️ the highlight + margin-comment layer for reviewing text and media
+- 📱 a layout that's responsive and doesn't overflow the window on the first build
+
+lookdev is that scaffolding, **codified once and reused.** 🧱 The agent starts from a known-good interaction model and spends its effort on *your* artifact, not on re-plumbing sliders. You get the **same capture contract every session** (reproducible, not bespoke) and studios that work on the *first* build — not the third.
+
+> 💡 The difference between a one-off you *hope* renders and a **repeatable pattern** that does.
 
 ## 🧭 Two studio shapes
 
