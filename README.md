@@ -18,7 +18,11 @@ Claude Code is text-first, so it tends to **guess** visual values — a blur rad
 
 ![How lookdev differs: most Claude Code use is a text round-trip where Claude guesses values from a screenshot; lookdev builds a live studio you tune by eye, capturing exact values](docs/how-it-works.svg)
 
-Most Claude Code work is text the whole way down — you describe a look, Claude *guesses* the values, hands back code, and you describe the fix again. lookdev breaks that loop: Claude builds the studio, **you** set the dials, and the exact state — not a guess — becomes the code or asset.
+Most Claude Code work is text the whole way down — you describe a look, Claude *guesses* the values from a screenshot, hands back code, you eyeball it, describe the fix in prose, and wait for the next round. Every iteration is a **time-delayed round-trip**: generate → wait → critique in words → regenerate, minutes at a time.
+
+lookdev collapses that to **seconds of real-time feedback**. Claude builds the studio once; then **you** drag a slider and the result updates live — no waiting on a regeneration to find out whether 12px or 16px was right. The slow part of agent iteration was never the compute, it's the **human round-trip** — the back-and-forth of putting visual fixes into words. Tuning by hand removes it, and the exact state you land on (not a guess) becomes the code or asset.
+
+> **We didn't invent this.** It's a pattern already emerging in agent workflows — call it *ephemeral tooling*: the agent builds a disposable, single-use interface for one tuning session instead of iterating blind. lookdev just codifies it into a repeatable skill.
 
 ## ✨ What it does
 
