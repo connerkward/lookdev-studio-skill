@@ -1,5 +1,7 @@
 # lookdev
 
+*lookdev is a Claude Code skill: a live human-in-the-loop web studio to tune AI-generated output by eye, then bake the chosen state into reproducible assets.*
+
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue) ![Claude Code skill](https://img.shields.io/badge/Claude%20Code-skill-d97757) ![Human-in-the-loop](https://img.shields.io/badge/human--in--the--loop-46d39a) ![Web · Three.js](https://img.shields.io/badge/web-Three.js-111)
 
 **Stop guessing values from a screenshot. lookdev spins up a live, in-browser studio — sliders, color pickers, drag handles, inline markup — so you *dial in* AI-generated output by eye, then bakes the chosen state back into reproducible assets or code.**

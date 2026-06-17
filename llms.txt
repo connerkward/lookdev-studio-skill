@@ -1,0 +1,14 @@
+# lookdev
+
+> lookdev is a Claude Code skill: a live human-in-the-loop web studio to tune AI-generated output by eye, then bake the chosen state into reproducible assets.
+
+## Install (Claude Code)
+- Add the marketplace: `/plugin marketplace add connerkward/ckw-skills`
+- Install this plugin: `/plugin install lookdev@connerkward`
+
+## Links
+- Canonical README: https://github.com/connerkward/lookdev-studio-skill
+- Marketplace (all of Conner K. Ward's skills + MCP servers): https://github.com/connerkward/ckw-skills
+
+## Optional
+- Author: Conner K. Ward — https://github.com/connerkward
