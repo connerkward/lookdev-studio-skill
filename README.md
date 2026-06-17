@@ -91,3 +91,7 @@ The human-in-the-loop sibling of [`lookdev-auto`](https://github.com/connerkward
 ## License
 
 MIT © Conner K Ward
+
+---
+
+🧭 **[ckw-skills](https://github.com/connerkward/ckw-skills)** — part of Conner K. Ward's collection of Claude Code skills & MCP servers.
