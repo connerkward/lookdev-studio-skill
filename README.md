@@ -6,7 +6,7 @@
 
 ![lookdev: a bas-relief XPS extrusion studio rendering a depth map into a 3D relief, with a full control panel and ViewCube](docs/lookdev.png)
 
-*A real lookdev studio: a depth map extruded into a machinable XPS bas-relief, with live controls for plaque size, board thickness, depth remap, material, lighting, and a sheet-layout visualizer. Drag a control → it re-renders. You never type a number you guessed.*
+*A real lookdev studio (the relief-extrusion example). Drag a control → it re-renders; you never type a number you guessed.*
 
 ## 🤔 Why
 
