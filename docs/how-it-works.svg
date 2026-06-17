@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" font-family="-apple-system, Inter, Segoe UI, sans-serif">
+  <defs>
+    <marker id="ah" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7a7a88"/></marker>
+    <marker id="ahg" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#46d39a"/></marker>
+    <marker id="ahr" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#c8704f"/></marker>
+    <style>
+      .lbl{fill:#8a8a98;font-size:12px;font-weight:700;letter-spacing:.12em}
+      .box{fill:#15151c;stroke:#2a2a36;stroke-width:1.5;rx:11}
+      .boxhi{fill:#10241a;stroke:#46d39a;stroke-width:2}
+      .t{fill:#e9e9ef;font-size:14px;font-weight:600}
+      .s{fill:#9a9aa6;font-size:12px}
+      .note{fill:#6a6a78;font-size:12px;font-style:italic}
+      .you{fill:#cdd3ff;font-size:11px;font-weight:700;letter-spacing:.05em}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="900" height="460" fill="#0c0c10" rx="14"/>
+
+  <!-- LANE 1: typical -->
+  <text x="40" y="44" class="lbl">HOW MOST PEOPLE USE CLAUDE CODE — TEXT ALL THE WAY DOWN</text>
+  <rect x="40"  y="60" width="170" height="64" class="box" rx="11"/>
+  <text x="125" y="88" text-anchor="middle" class="t">You describe it</text>
+  <text x="125" y="107" text-anchor="middle" class="s">"make it look right"</text>
+
+  <rect x="262" y="60" width="186" height="64" class="box" rx="11"/>
+  <text x="355" y="88" text-anchor="middle" class="t">Claude guesses</text>
+  <text x="355" y="107" text-anchor="middle" class="s">values from a screenshot</text>
+
+  <rect x="500" y="60" width="170" height="64" class="box" rx="11"/>
+  <text x="585" y="88" text-anchor="middle" class="t">Code / image back</text>
+  <text x="585" y="107" text-anchor="middle" class="s">close, but off</text>
+
+  <line x1="212" y1="92" x2="258" y2="92" stroke="#7a7a88" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="450" y1="92" x2="496" y2="92" stroke="#7a7a88" stroke-width="2" marker-end="url(#ah)"/>
+  <!-- loop back -->
+  <path d="M585,124 L585,150 Q585,160 575,160 L135,160 Q125,160 125,150 L125,128" fill="none" stroke="#c8704f" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ahr)"/>
+  <text x="355" y="176" text-anchor="middle" class="note">describe the fix… again — you never touch the artifact, values stay guessed</text>
+
+  <!-- divider -->
+  <line x1="40" y1="212" x2="860" y2="212" stroke="#22222c" stroke-width="1.5"/>
+
+  <!-- LANE 2: lookdev -->
+  <text x="40" y="250" class="lbl" fill="#46d39a">WITH lookdev — A LIVE STUDIO, A HUMAN IN THE LOOP</text>
+  <rect x="40"  y="266" width="158" height="64" class="box" rx="11"/>
+  <text x="119" y="294" text-anchor="middle" class="t">You describe it</text>
+  <text x="119" y="313" text-anchor="middle" class="s">same goal</text>
+
+  <rect x="240" y="266" width="178" height="64" class="box" rx="11"/>
+  <text x="329" y="294" text-anchor="middle" class="t">Claude builds a</text>
+  <text x="329" y="313" text-anchor="middle" class="s">live in-browser studio</text>
+
+  <rect x="460" y="262" width="178" height="72" class="boxhi" rx="11"/>
+  <text x="549" y="285" text-anchor="middle" class="you">◀ YOU ▶</text>
+  <text x="549" y="305" text-anchor="middle" class="t" fill="#cdeedd">tune by eye</text>
+  <text x="549" y="323" text-anchor="middle" class="s">sliders · drag · pickers</text>
+
+  <rect x="680" y="266" width="178" height="64" class="box" rx="11"/>
+  <text x="769" y="294" text-anchor="middle" class="t">Exact state →</text>
+  <text x="769" y="313" text-anchor="middle" class="s">code / assets, reproducible</text>
+
+  <line x1="200" y1="298" x2="236" y2="298" stroke="#46d39a" stroke-width="2" marker-end="url(#ahg)"/>
+  <line x1="420" y1="298" x2="456" y2="298" stroke="#46d39a" stroke-width="2" marker-end="url(#ahg)"/>
+  <line x1="640" y1="298" x2="676" y2="298" stroke="#46d39a" stroke-width="2" marker-end="url(#ahg)"/>
+  <text x="449" y="368" text-anchor="middle" class="note">you act on the artifact directly — the chosen values are captured, not guessed. one pass, no telephone.</text>
+
+  <!-- bottom takeaway -->
+  <rect x="40" y="398" width="820" height="42" rx="10" fill="#10241a" stroke="#2a4a3a" stroke-width="1.5"/>
+  <text x="450" y="424" text-anchor="middle" fill="#9fdcbd" font-size="13" font-weight="600">The shift: from “describe it and hope Claude’s eye is right” to “Claude hands you the dials, you set them.”</text>
+</svg>
