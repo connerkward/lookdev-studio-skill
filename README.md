@@ -14,6 +14,12 @@ Claude Code is text-first, so it tends to **guess** visual values — a blur rad
 
 > **What this is:** not a one-shot render and not a Q&A where you dictate numbers — a studio you manipulate, where "show me, I'll pick" beats "ask me to specify."
 
+## 🔁 How it differs from how most people use Claude Code
+
+![How lookdev differs: most Claude Code use is a text round-trip where Claude guesses values from a screenshot; lookdev builds a live studio you tune by eye, capturing exact values](docs/how-it-works.svg)
+
+Most Claude Code work is text the whole way down — you describe a look, Claude *guesses* the values, hands back code, and you describe the fix again. lookdev breaks that loop: Claude builds the studio, **you** set the dials, and the exact state — not a guess — becomes the code or asset.
+
 ## ✨ What it does
 
 - 🎛️ **Live controls** — sliders, pickers, drag handles, scrubbers; tune and see the result instantly
